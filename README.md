@@ -23,6 +23,8 @@ When you deploy a loadout this application attempts to locate the external conso
 	4.) Open the inventory (tab) when you want to deploy a loadout, as you this will show the mouse cursor.
 	5.) Select your loadout and click on the Deploy Loadout button.
 	
+	**NOTE** This will only work if tgive command is enabled.
+	
 ## Bugs & Other Info:
 	Your Antivirus may falsly flag this application as a virus, this may be because it writes an ini file or because of an existing virus that uses the name 'APEX'.
 	If you are concerned please review the code and compile for yourself.
