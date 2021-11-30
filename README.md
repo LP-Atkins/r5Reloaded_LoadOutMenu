@@ -18,7 +18,7 @@ When you deploy a loadout this application attempts to locate the external conso
 
 ## Instructions:
 	1.) Set game to borderless window.
-	2.) Move to top right hand corner.
+	2.) Launch this app and move it to top right hand corner.
 	3.) Open the inventory (tab) when you want to deploy a loadout, as you this will show the mouse cursor.
 	4.) Select your loadout and click on the Deploy Loadout button.
 	
