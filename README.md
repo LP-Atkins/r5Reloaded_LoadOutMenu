@@ -27,10 +27,16 @@ When you deploy a loadout this application attempts to locate the external conso
 	
 	**NOTE** This will only work if tgive command is enabled.
 	
-## Bugs & Help My Antivirus is blocking this!:
-	Your Antivirus may falsly flag this application as a virus. I am not sure why, and have submitted a false flag ticket to Microsoft.
-	In the mean time if you wish to download the .exe file you will need to temporarily disable your antivirus, then download the file, turn your antivirus back on and then in the action centre allow the 'threat'.
-
+# Help My Antivirus is blocking this!:
+	Windows AV (machine learning algorithm) originally falsly flagged this, I submitted the exe to Microsoft and they have removed the false positive.
+	If you are still having trouble with windows AV follow the steps provide by Microsoft:
+	
+	1. Open command prompt as administrator and change directory to c:\Program Files\Windows Defender
+	2. Run “MpCmdRun.exe -removedefinitions -dynamicsignatures”
+	3. Run "MpCmdRun.exe -SignatureUpdate"
+	
+	Alternatively you may want to instead add an exception for this program in your preferred AV software.
 	If you are concerned, please review the code and compile for yourself.
 	
+# Bugs
 	If you encounter any bugs (app crashes) report them here, please note that r5Reloaded is a little buggy and some of the commands don't work properly / some guns don't spawn with ammo and I cannot do anything about this.
