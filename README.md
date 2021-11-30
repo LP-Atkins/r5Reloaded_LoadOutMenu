@@ -28,7 +28,9 @@ When you deploy a loadout this application attempts to locate the external conso
 	**NOTE** This will only work if tgive command is enabled.
 	
 ## Bugs & Other Info:
-	Your Antivirus may falsly flag this application as a virus, this may be because it writes an ini file or because of an existing virus that uses the name 'APEX'.
-	If you are concerned please review the code and compile for yourself.
+	Your Antivirus may falsly flag this application as a virus. I am not sure why, and have submitted a false flag ticket to Microsoft.
+	In the mean time if you wish to download the .exe file you will need to temporarily disable your antivirus, then download the file, turn your antivirus back on and then in the action centre allow the 'threat'.
+
+	If you are concerned, please review the code and compile for yourself.
 	
 	If you encounter any bugs (app crashes) report them here, please note that r5Reloaded is a little buggy and some of the commands don't work properly / some guns don't spawn with ammo and I cannot do anything about this.
