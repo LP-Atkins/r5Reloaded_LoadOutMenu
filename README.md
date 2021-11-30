@@ -27,7 +27,7 @@ When you deploy a loadout this application attempts to locate the external conso
 	
 	**NOTE** This will only work if tgive command is enabled.
 	
-## Bugs & Other Info:
+## Bugs & Help My Antivirus is blocking this!:
 	Your Antivirus may falsly flag this application as a virus. I am not sure why, and have submitted a false flag ticket to Microsoft.
 	In the mean time if you wish to download the .exe file you will need to temporarily disable your antivirus, then download the file, turn your antivirus back on and then in the action centre allow the 'threat'.
 
