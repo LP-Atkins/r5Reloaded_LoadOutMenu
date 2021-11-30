@@ -18,10 +18,12 @@ When you deploy a loadout this application attempts to locate the external conso
 
 ## Instructions:
 	1.) Set game to borderless window.
-	2.) Have the checkbox for always on top checked.
-	3.) Move to top right hand corner.
-	4.) Open the inventory (tab) when you want to deploy a loadout, as you this will show the mouse cursor.
-	5.) Select your loadout and click on the Deploy Loadout button.
+	2.) Move to top right hand corner.
+	3.) Open the inventory (tab) when you want to deploy a loadout, as you this will show the mouse cursor.
+	4.) Select your loadout and click on the Deploy Loadout button.
+	
+	You can also save the current loadout (as per the comboboxes) to a favourite, make sure to select the favourite index before doing so.
+	To access the favourites menu simply click on the 'Open Fav Menu' button.
 	
 	**NOTE** This will only work if tgive command is enabled.
 	
