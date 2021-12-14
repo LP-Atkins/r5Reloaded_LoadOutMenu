@@ -1,11 +1,14 @@
-# r5-Reloaded Apex Legends, Loadout Menu, v1.00
+# r5-Reloaded Apex Legends, Loadout Menu, v1.0.1
+# v1.0.1 will release here once it has been cleard by Microsoft Antivirus Team, for now the source code is available to be compiled.
 A small application that can allow you to swap loadouts in modded Apex Legends.
 This application has only been tested on Windows 10 & 11.
 
 Written in Visual Basic Classic (VB6).
 
 ## Version Summary:
-* v1.00: Original release.
+* v1.0.0: Original release.
+* v1.0.1: -Window position is now saved.
+* 	  -Custom Abilities and Weapons can now be loaded through the INI file.
 
 ## Features:
 * Allows you to select all available guns for primary & secondary.
@@ -26,6 +29,27 @@ When you deploy a loadout this application attempts to locate the external conso
 	To access the favourites menu simply click on the 'Open Fav Menu' button.
 	
 	**NOTE** This will only work if tgive command is enabled.
+
+## How do I add custom weapons & abilties?
+	1.) Once you launch the program an INI file should be generated, (if it doesn't contain the settings click the 'Save Fav' button to force it to.
+	2.) Under the "Custom Weapon" and "Custom Ability" Heading in the INI file there should be a few keys that have been generated with instructions.
+	
+	Should look like this:
+		weapCmd_0	<- The 0 in this case is the index, 0-99 are supported.
+		weapName_0	<- Both name and command must be valid or it wont be shown.
+		
+	Example:
+	
+	[Custom Weapon]
+	weapCmd_0=mp_weapon_bfg9000 optic_theopticyouwant mag_themagyouwant attachment_etc
+	weapName_0=BFG9000
+	[Custom Ability]
+	abilityCmd_0=mp_ability_iddqd
+	abilityName_0=Degreelessness mode
+
+
+## The window wont pop up anywhere but the program is running?
+	It may have saved a bad location for the x and y position, if this happens close the program and edit the INI file and remove the xPos and yPos keys.
 	
 # Help My Antivirus is blocking this!:
 	Windows AV (machine learning algorithm) originally falsly flagged this, I submitted the exe to Microsoft
