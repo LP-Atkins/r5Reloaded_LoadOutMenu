@@ -13,6 +13,10 @@ Begin VB.Form frmSelect
    ScaleHeight     =   1035
    ScaleWidth      =   7155
    StartUpPosition =   3  'Windows Default
+   Begin VB.Timer tmrMove 
+      Left            =   6720
+      Top             =   480
+   End
    Begin VB.CommandButton btnFavMenu 
       BackColor       =   &H00FFFFFF&
       Caption         =   "Open Fav Menu"
@@ -138,14 +142,18 @@ Attribute VB_Exposed = False
 '@Folder("Forms")
 Option Explicit
 
+
 Private Sub Form_Load()
 
-    Call FormOnTop(Me)  'Makes the application render always on top.
+    Call FormOnTop(Me)      'Makes the application render always on top.
     cbWeapon(0).Text = DEF_PRIMARY
     cbWeapon(1).Text = DEF_SECONDARY
     cbAbility(0).Text = DEF_TACTICAL
     cbAbility(1).Text = DEF_ULTIMATE
-    cbFav.Text = " 1"       'Needs to have a leading space because VB combobox goes all weird if you don't have it (will be trimmed later).
+    cbFav.Text = " 1"       'Needs to have a leadicng space because VB combobox goes all weird if you don't have it (will be trimmed later).
+    
+    'Add custom weapons and abilities.
+    Call addCustoms
     
     'Remember the settings when switching between forms.
     If PrimSel <> vbNullString Then cbWeapon(0).Text = PrimSel
@@ -153,6 +161,13 @@ Private Sub Form_Load()
     If TacSel <> vbNullString Then cbAbility(0).Text = TacSel
     If UltSel <> vbNullString Then cbAbility(1).Text = UltSel
     If FavSel <> vbNullString Then cbFav.Text = FavSel
+    
+    'Set window last position and start save timer.
+    If xyPos Then
+        Me.Left = xPos
+        Me.Top = yPos
+    End If
+    tmrMove.Interval = 1000
     
 End Sub
 
@@ -208,4 +223,39 @@ Dim Index As Long
     'Write INI File.
     Call WriteINI
 
+End Sub
+
+
+'Adds the user custom weapons & abilities to the comboboxes.
+Private Sub addCustoms()
+Dim Key As Variant
+
+    'Weapons
+    For Each Key In colCustomWeapons
+        cbWeapon(0).AddItem Key.Name
+        cbWeapon(1).AddItem Key.Name
+    Next Key
+    
+    'Abilities
+    For Each Key In colCustomAbilities
+        cbAbility(0).AddItem Key.Name
+        cbAbility(1).AddItem Key.Name
+    Next Key
+    
+End Sub
+
+
+'Checks and saves the window position to the INI file.
+Private Sub tmrMove_Timer()
+
+    If Me.Left <> xPos Then
+        Call PutINISetting("Settings", "xPos", Me.Left, INI_PATH)
+        xPos = Me.Left
+    End If
+    
+    If Me.Top <> yPos Then
+        Call PutINISetting("Settings", "yPos", Me.Top, INI_PATH)
+        yPos = Me.Top
+    End If
+        
 End Sub

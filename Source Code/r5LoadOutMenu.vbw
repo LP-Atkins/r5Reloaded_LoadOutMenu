@@ -1,8 +1,9 @@
-frmSelect = 104, 104, 1315, 586, , 26, 26, 1411, 508, C
+frmSelect = 104, 104, 1315, 586, C, 26, 26, 1411, 508, C
 windowOnTop = 26, 26, 907, 508, C
 getHandles = 78, 78, 1445, 790, C
 typeText = 312, 312, 1679, 1024, C
 Program_Start = 78, 78, 1159, 560, C
 miscFunctions = 52, 52, 1133, 534, C
-frmFavMenu = 104, 104, 877, 586, , 78, 78, 851, 560, C
+frmFavMenu = 104, 104, 877, 586, C, 78, 78, 851, 560, C
 settingsINI = 104, 104, 877, 586, C
+FormResizer = 104, 104, 1168, 586, Z

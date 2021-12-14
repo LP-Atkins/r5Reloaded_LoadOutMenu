@@ -6,11 +6,12 @@ Option Explicit
 
 
 'Returns the console command for a weapon, index denotes whether it is primary or secondary.
+Public Spacer As String     'Spacer is used to space the weapons from attachments because I didn't consider this when I added the custom weapons load... not required if it is a custom weapon.
 Public Function WeaponCommand(ByVal Weapon As String, ByVal Index As Long) As String
 
     Select Case Index
-        Case 0: WeaponCommand = "tgive p " & ResolveWeaponName(Weapon) & " " & GiveAttachments(ResolveWeaponName(Weapon))
-        Case 1: WeaponCommand = "tgive s " & ResolveWeaponName(Weapon) & " " & GiveAttachments(ResolveWeaponName(Weapon))
+        Case 0: WeaponCommand = "tgive p " & ResolveWeaponName(Weapon) & Spacer & GiveAttachments(ResolveWeaponName(Weapon))
+        Case 1: WeaponCommand = "tgive s " & ResolveWeaponName(Weapon) & Spacer & GiveAttachments(ResolveWeaponName(Weapon))
     End Select
     
 End Function
@@ -52,6 +53,9 @@ Public Function ResolveAbilityName(ByVal Ability As String) As String
         Case "Trophy System": ResolveAbilityName = "mp_weapon_trophy_defense_system"
         Case "Doc Drone": ResolveAbilityName = "mp_weapon_deployable_medic"
         Case "Care Package": ResolveAbilityName = "mp_ability_care_package"
+        
+        'Custom Abilities
+        Case Else:  If ColExists(colCustomAbilities, Ability) Then ResolveAbilityName = colCustomAbilities(Ability).Command
     
     End Select
 
@@ -61,6 +65,7 @@ End Function
 'Resolves the plain text name for a weapon to the console string.
 Public Function ResolveWeaponName(ByVal Weapon As String) As String
 
+    Spacer = " "
     Select Case Weapon
     
         Case "Alternator":  ResolveWeaponName = "mp_weapon_alternator_smg"
@@ -85,6 +90,13 @@ Public Function ResolveWeaponName(ByVal Weapon As String) As String
         Case "Spitfire":  ResolveWeaponName = "mp_weapon_lmg"
         Case "Triple Take":  ResolveWeaponName = "mp_weapon_doubletake"
         Case "Wingman":  ResolveWeaponName = "mp_weapon_wingman"
+        
+        'Custom Weapons
+        Case Else
+                    If ColExists(colCustomWeapons, Weapon) Then
+                        ResolveWeaponName = colCustomWeapons(Weapon).Command
+                        Spacer = vbNullString
+                    End If
         
     End Select
 
@@ -239,4 +251,13 @@ End Sub
 'Call FileExists("C:\File.xtn")
 Public Function FileExists(FilePath As String) As Boolean
     If Dir(FilePath) <> vbNullString Then FileExists = True
+End Function
+
+
+'Returns true if a key within a collection exists.
+Public Function ColExists(col As Collection, Key As String) As Boolean
+On Error Resume Next
+    If IsObject(col.Item(Key)) Then
+        If Err.Number = 0 Then ColExists = True
+    End If
 End Function
