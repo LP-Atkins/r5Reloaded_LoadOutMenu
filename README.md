@@ -1,5 +1,4 @@
 # r5-Reloaded Apex Legends, Loadout Menu, v1.0.1
-# v1.0.1 will release here once it has been cleard by Microsoft Antivirus Team, for now the source code is available to be compiled.
 A small application that can allow you to swap loadouts in modded Apex Legends.
 This application has only been tested on Windows 10 & 11.
 
@@ -8,8 +7,8 @@ Written in Visual Basic Classic (VB6).
 ## Version Summary:
 * v1.0.0: Original release.
 * v1.0.1:
-* 	-Window position is now saved.
-* 	-Custom Abilities and Weapons can now be loaded through the INI file.
+ 	-Window position is now saved.
+ 	-Custom Abilities and Weapons can now be loaded through the INI file.
 
 ## Features:
 * Allows you to select all available guns for primary & secondary.
