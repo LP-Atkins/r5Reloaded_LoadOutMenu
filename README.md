@@ -7,8 +7,9 @@ Written in Visual Basic Classic (VB6).
 
 ## Version Summary:
 * v1.0.0: Original release.
-* v1.0.1: -Window position is now saved.
-* 	  -Custom Abilities and Weapons can now be loaded through the INI file.
+* v1.0.1:
+* 	-Window position is now saved.
+* 	-Custom Abilities and Weapons can now be loaded through the INI file.
 
 ## Features:
 * Allows you to select all available guns for primary & secondary.
